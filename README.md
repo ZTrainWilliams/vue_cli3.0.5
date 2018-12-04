@@ -63,13 +63,21 @@ module.exports = {
 					sideEffects: false // false | [] -> []放置不清除副作用文件
 				}
 			]
+		},
+		externals:{ // 在这里配置后，减少了压缩的包内容，需要在public/index.html通过cdn方式再引入,注意对应的版本
+			vue: "Vue",
+			vuex: "Vuex",
+			"vue-router": "VueRouter",
+			"element-ui": "ELEMENT"
 		}
 	}
 }
-``` javascript
+```
 
 ###babel.config.js
-	为避免运行和打包时对export、module.exports混用出现的报错，在babel.config.js添加 plugins: []，即可不报错
+
+为避免运行和打包时对export、module.exports混用出现的报错，在babel.config.js添加 plugins: []，即可不报错
 
 ###webpackConfig
-	如果你想快速查看基础的webpack.config配置，可以在cmd中写入vue inspect > outpot.js,回车查看output.js文件
+
+如果你想快速查看基础的webpack.config配置，可以在cmd中写入vue inspect > outpot.js,回车查看output.js文件

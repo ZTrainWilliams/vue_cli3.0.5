@@ -31,6 +31,12 @@ module.exports = {
 					sideEffects: false // false | [] -> []放置不清除副作用文件
 				}
 			]
+		},
+		externals:{ // 在这里配置后，减少了压缩的包内容，需要在public/index.html通过cdn方式再引入,注意对应的版本
+			vue: "Vue",
+			vuex: "Vuex",
+			"vue-router": "VueRouter",
+			"element-ui": "ELEMENT"
 		}
 	}
 }
