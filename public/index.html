@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link rel="stylesheet" href="//cdn.bootcss.com/element-ui/2.4.9/theme-chalk/index.css">
-    <title>project</title>
+    <% for(var css of htmlWebpackPlugin.options.cdn.css) { %>
+      <link href="<%=css%>" rel="preload" as="style">
+      <link rel="stylesheet" href="<%=css%>" as="style">
+    <% } %>
+    <% for(var js of htmlWebpackPlugin.options.cdn.js) { %>
+      <link href="<%=js%>" rel="preload" as="script">
+      <script src="<%=js%>"></script>
+      <% } %>
+    <script src="//g.alicdn.com/dingding/dingtalk-jsapi/2.0.57/dingtalk.open.js"></script>
+    <title>vue-cli3-project</title>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but project doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but vue-cli3-project doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
-    <script src="//cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
-    <script src="//cdn.bootcss.com/vuex/3.0.1/vuex.min.js"></script>
-    <script src="//cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script>
-    <script src="//cdn.bootcss.com/element-ui/2.4.9/index.js"></script>
     <!-- built files will be auto injected -->
   </body>
 </html>
