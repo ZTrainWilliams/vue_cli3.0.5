@@ -74,6 +74,13 @@ module.exports = {
 }
 ```
 
+### 命令生成组件/页面.vue文件
+```javascript
+npm run new:comp
+
+npm run new:view
+```
+
 ###babel.config.js
 
 为避免运行和打包时对export、module.exports混用出现的报错，在babel.config.js添加 plugins: []，即可不报错
